@@ -26,6 +26,7 @@ valor padrão `/app/data`.
 ├── app.py             # aplicação Flask (3 rotas)
 ├── requirements.txt   # dependências (flask)
 ├── Dockerfile         # receita da imagem
+├── compose.yaml        # sobe o serviço com volume nomeado em um comando
 ├── .dockerignore      # o que não entra no contexto de build
 ├── README.md
 └── RELATORIO.md       # relatório da atividade
@@ -61,6 +62,22 @@ docker stop notas && docker rm notas          # destrói o container
 docker volume ls                              # o volume continua lá
 docker run -d --name notas2 -p 8000:8000 -v notas-dados:/app/data notas-api:1.0
 curl http://localhost:8000/notas              # as anotações continuam lá
+```
+
+### Com Docker Compose
+
+`compose.yaml` já faz o build, cria o volume nomeado e sobe o container em um
+comando só — equivalente às etapas 3 e 4 acima.
+
+```bash
+docker compose up -d --build
+curl -X POST http://localhost:8000/notas \
+  -H "Content-Type: application/json" \
+  -d '{"texto": "primeira nota"}'
+curl http://localhost:8000/notas
+
+docker compose down          # remove o container, mantém o volume notas-dados
+docker compose down -v       # remove também o volume (apaga os dados)
 ```
 
 ### Localmente, sem Docker

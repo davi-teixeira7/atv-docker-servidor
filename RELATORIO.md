@@ -2,7 +2,7 @@
 
 **Atividade:** Construção de imagem própria para aplicação Python e persistência de dados em volume
 **Disciplina:** Computação em Nuvem
-**Aluno:** Davi Teixeira
+**Alunos:** Davi Teixeira, Nicole França
 **Repositório:** https://github.com/davi-teixeira7/atv-docker-servidor
 
 **Ambiente de execução:**
