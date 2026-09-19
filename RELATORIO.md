@@ -5,15 +5,6 @@
 **Alunos:** Davi Teixeira, Nicole França
 **Repositório:** https://github.com/davi-teixeira7/atv-docker-servidor
 
-**Ambiente de execução:**
-
-| Item | Versão |
-| ---- | ------ |
-| Docker Engine | 29.7.2 (build a7dcaa6) |
-| Sistema hospedeiro | macOS (Darwin 25.6.0), arquitetura arm64 |
-| Imagem base | `python:3.12-slim` (Python 3.12.14, Debian trixie) |
-| Framework | Flask 3.1.0 |
-
 ---
 
 ## 1. A aplicação
